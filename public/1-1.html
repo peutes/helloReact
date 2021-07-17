@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello React</title>
+</head>
+<body>
+  <h1>React</h1>
+  <div id="root">
+    Hello
+  </div>
+</body>
+
+<style>
+#root {
+  cursor: pointer;
+  font-size: 20pt;
+  background-color: lightblue;
+  padding: 10px 20px;
+}
+</style>
+
+<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script>
+  let dom = document.querySelector('#root')
+  let element = React.createElement('p', {}, 'Hello React')
+  let c = 0
+  ReactDOM.render(element, dom)
+
+  dom.addEventListener('click', count)
+
+  function count() {
+    c++;
+    element = React.createElement('p', {}, c)
+    ReactDOM.render(element, dom)
+  }
+</script>
+
+</html>
